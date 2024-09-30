@@ -15,7 +15,6 @@ resource "rancher2_machine_config_v2" "nodes" {
 
     creation_type   = "template"
     cpu_count       = each.value.vcpu
-    creation_type   = "library"
     datacenter      = var.vsphere_env.datacenter
     datastore       = var.vsphere_env.datastore
     disk_size       = each.value.hdd_capacity

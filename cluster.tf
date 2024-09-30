@@ -61,8 +61,9 @@ resource "rancher2_cluster_v2" "rke2" {
     }   # End of machine_pools
 
     machine_selector_config {
-      config = {
-        profile                 = "cis"
+     config = jsonencode({
+        profile = "cis"
+      })
   
     } # End machine_selector_config
   }   # End of rke_config

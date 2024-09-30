@@ -1,5 +1,4 @@
 
-
 resource "rancher2_machine_config_v2" "nodes" {
   for_each      = var.node
   generate_name = replace(each.value.name, "_", "-")

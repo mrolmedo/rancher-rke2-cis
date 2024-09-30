@@ -6,7 +6,6 @@ resource "rancher2_machine_config_v2" "nodes" {
   vsphere_config {
     cfgparam   = ["disk.enableUUID=TRUE"]
     clone_from      = var.vsphere_env.template
-
     cloud_config = templatefile("${path.cwd}/files/user_data_${each.key}.tftmpl",
       {
         pss_config     = file("${path.cwd}/files/pss-admission-config.yaml"),

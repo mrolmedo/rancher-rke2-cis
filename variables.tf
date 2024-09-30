@@ -19,11 +19,13 @@ variable "rancher_env" {
 variable "vsphere_env" {
   description = "Variables for vSphere environment"
   type = object({
-    cloud_image_name = string
+    template         = string
     datacenter       = string
     datastore        = string
-    library_name     = string
+    ds_url           = string
     server           = string
-    vm_network       = string
+    user             = string
+    folder           = string
+    pass             = string
   })
 }
